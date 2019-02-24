@@ -1,0 +1,28 @@
+{
+    "browserSync": {
+      "proxy": "http://localhost:3000",
+      "watch": [
+        "public/css/*.css",
+        "public/js/*.js"
+      ]
+    },
+    "entry": {
+      "bpongwist-app": ["./src/client/js/bpongwist.jsx"],
+      "bpongwist-style": ["./src/client/scss/bpongwist.scss"]
+    },
+    "names": {      
+      "fileLoader": "public/images/[name].[ext]",
+      "urlLoader": "/images/[name].[ext]"
+    },
+    "paths": {
+      "clean": ["public"],
+      "cleanExclude": ["favicon.ico"],
+      "dist": "public",
+      "output": "public",
+      "sassResources": "src/client/scss/_variables.scss",
+      "urlLoader": {
+        "output": "fonts",
+        "public": "../fonts"
+      }
+    }
+  }
