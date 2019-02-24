@@ -17,8 +17,9 @@
     "paths": {
       "clean": ["public"],
       "cleanExclude": ["favicon.ico"],
-      "dist": "public",
+      "dist": "dist",
       "output": "public",
+      "public": "public",
       "sassResources": "src/client/scss/_variables.scss",
       "urlLoader": {
         "output": "fonts",

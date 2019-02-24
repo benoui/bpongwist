@@ -1,8 +1,11 @@
+import autoprefixer from "autoprefixer";
 import CleanPlugin from "clean-webpack-plugin";
+import cssnano from "cssnano";
 import DotenvPlugin from "dotenv-webpack";
 import HtmlPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import path from "path";
+import StylelintPlugin from "stylelint-webpack-plugin";
 import * as config from "./config.json";
 
 export default (env = {}) => {
@@ -14,16 +17,14 @@ export default (env = {}) => {
   // postcss-loader Options
   // ----------------------
 
-  /* eslint-disable global-require */
   const postcssLoaderOptions = {
     plugins: [
-      require("autoprefixer")(),
-      require("cssnano")({
+      autoprefixer(),
+      cssnano({
         preset: ["default", { discardComments: { removeAll: true } }]
       })
     ]
   };
-  /* eslint-enable global-require */
 
   // ----------------------
   // Plugins
@@ -37,7 +38,7 @@ export default (env = {}) => {
     root: process.cwd(),
     verbose: true
   };
-  const htmlOptions = {template: "resources/index.html"};
+  const htmlOptions = { template: "resources/index.html" };
   const miniCssExtractOptions = {
     filename: "css/[name].css",
     chunkFilename: "css/[id].css"
@@ -47,12 +48,13 @@ export default (env = {}) => {
     new CleanPlugin(cleanPaths, cleanOptions),
     new DotenvPlugin(),
     new HtmlPlugin(htmlOptions),
-    new MiniCssExtractPlugin(miniCssExtractOptions)
+    new MiniCssExtractPlugin(miniCssExtractOptions),
+    new StylelintPlugin()
   ];
 
   const developmentPlugins = [...commonPlugins];
   if (config.browserSync && !env.isProduction) {
-    new CleanPlugin(cleanPaths, cleanOptions)
+    new CleanPlugin(cleanPaths, cleanOptions);
     // TODO add here
     // developmentPlugins.push();
   }
@@ -69,8 +71,8 @@ export default (env = {}) => {
   return {
     context: process.cwd(),
     devServer: {
-      contentBase: config.paths.dist,
-      proxy: config.proxy?.length > 0 ? config.proxy : undefined
+      contentBase: config.paths.public,
+      proxy: config.proxy && config.proxy.length > 0 ? config.proxy : undefined
     },
     devtool: env.production ? "source-map" : "cheap-module-eval-source-map",
     entry: config.entry,
