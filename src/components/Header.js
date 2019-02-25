@@ -1,17 +1,53 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
+import { AppBar, Tabs, Tab } from '@material-ui/core';
 
-const Header = () => {
-    return(
-        <div className="ui inverted segment">
-            <div className="ui inverted secondary four pointing menu">
-                <Link to="/" className="item ">Home</Link>
-                <Link to="/" className="item ">About</Link>
-                <Link to="/" className="item ">Work</Link>
-                <Link to="/" className="item ">Contact</Link>
-            </div>
-        </div>
-    );
-};
+class Header extends React.Component {
+    state = { value: 'home' };
+
+    handleChange = (event, value) => {
+        this.setState({ value });
+    };
+
+    render(){
+        return(
+            <AppBar position="static">
+                <Tabs 
+                    variant="fullWidth" 
+                    value={this.state.value} 
+                    onChange={this.handleChange}>
+                    <Tab
+                        value='home'
+                        disableRipple
+                        component={RouterLink}
+                        to='/'
+                        label="home">  
+                    </Tab>
+                    <Tab
+                        value='about'
+                        disableRipple
+                        component={RouterLink}
+                        to='/about'
+                        label="About">
+                    </Tab>
+                    <Tab
+                        value='work'
+                        disableRipple
+                        component={RouterLink}
+                        to='/work'
+                        label="Work">
+                    </Tab>
+                    <Tab
+                        value='contact'
+                        disableRipple
+                        component={RouterLink}
+                        to='/contact'
+                        label="Contact">
+                    </Tab>
+                </Tabs>
+            </AppBar>
+        );
+    }
+}
 
 export default Header;
