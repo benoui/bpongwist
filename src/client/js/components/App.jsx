@@ -1,3 +1,4 @@
+import "materialize-css/dist/js/materialize.min.js";
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 

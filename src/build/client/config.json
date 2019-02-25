@@ -1,0 +1,23 @@
+{
+    "entry": {
+      "bpongwist-client": ["./src/client/js/bpongwist.jsx"],
+      "bpongwist-style": ["./src/client/scss/bpongwist.scss"]
+    },
+    "names": {      
+      "fileLoader": "public/images/[name].[ext]",
+      "urlLoader": "/images/[name].[ext]"
+    },
+    "paths": {
+      "clean": ["public"],
+      "cleanExclude": ["favicon.ico"],
+      "dist": "dist",
+      "htmlTemplate": "resources/views/index.html",
+      "output": "public",
+      "public": "public",
+      "sassResources": "src/client/scss/_variables.scss",
+      "urlLoader": {
+        "output": "fonts",
+        "public": "../fonts"
+      }
+    }
+  }
