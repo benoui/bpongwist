@@ -1,0 +1,10 @@
+{
+    "entry": {
+      "bpongwist-app": ["./src/server/js/bpongwist.js"]
+    },
+    "paths": {
+      "clean": ["dist"],
+      "dist": "dist",
+      "output": "dist"
+    }
+  }
