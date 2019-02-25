@@ -38,7 +38,7 @@ export default (env = {}) => {
     root: process.cwd(),
     verbose: true
   };
-  const htmlOptions = { template: "resources/index.html" };
+  const htmlOptions = { template: config.paths.htmlTemplate };
   const miniCssExtractOptions = {
     filename: "css/[name].css",
     chunkFilename: "css/[id].css"
