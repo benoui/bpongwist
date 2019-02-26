@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Button } from '@material-ui/core';
 import { KeyboardArrowRight } from '@material-ui/icons';
+import { Link as RouterLink} from 'react-router-dom';
 
 const IntroPhrase = () => {
     return(
@@ -19,7 +20,7 @@ const IntroPhrase = () => {
                 </Typography>
             </div>
             <div align="center" >
-                <Button variant="outlined" >
+                <Button variant="outlined" component={RouterLink} to='/about'>
                     view our work
                     <KeyboardArrowRight/>
                 </Button>
