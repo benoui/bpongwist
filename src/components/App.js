@@ -2,14 +2,14 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import Header from './Header';
-import Home from './contents/Home';
+import Home from './Home';
 import About from './contents/About';
 import Work from './contents/Work';
 import Contact from './contents/Contact';
 
 const App = () => {
     return(
-        <div >
+        <div>
             <BrowserRouter >
                 <div>
                     <Header />
