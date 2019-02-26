@@ -6,9 +6,11 @@ import { fetchWeather } from '../../actions';
 
 
 class WeatherDisplay extends React.Component {
-
     componentDidMount(){
-        this.props.fetchWeather('bangkok')
+        if(this.props.weather.length === 0){
+            return this.props.fetchWeather('bangkok');
+        }
+        return
     }
 
     renderWeather(cityData){
@@ -25,25 +27,26 @@ class WeatherDisplay extends React.Component {
                     {name}
                 </Typography>
             </div>
-
         );
 
     }
 
     render(){
-        if (!this.props.openWeather) {
+        if (!this.props.weather) {
             return <div>Loading...</div>;
         }
         return(
             <div>
-                {this.props.openWeather.map(this.renderWeather)}
+                {this.props.weather.map(this.renderWeather)}
             </div>
         );
     }
 }
 
-const mapStateToProps = ({ openWeather }) => {
-    return { openWeather }
+const mapStateToProps = (state) => {
+    return {
+        weather: state.openWeather
+    }
 };
 
 export default connect(mapStateToProps, {fetchWeather})(WeatherDisplay);
