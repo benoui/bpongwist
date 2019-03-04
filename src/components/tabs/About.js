@@ -1,29 +1,26 @@
 import React from 'react';
-import { Typography, Grid, Divider} from '@material-ui/core';
-
-import Spinner from '../Spinner';
+import { Typography, Grid } from '@material-ui/core';
 
 const About = () => {
     return(
         <div>
-            <Grid container >
-                <Grid item xs style={{backgroundColor: 'grey'}}>
-                    <Typography variant="h4" gutterBottom >
-                        About
+            <Grid container  spaceing={24}>
+                <Grid item xs={12} sm={6}>
+                    <Typography variant="h5" gutterBottom >
+                        about ben
+                    </Typography>
+                    <Typography variant="h6" gutterBottom >
+                        I am Attaphon Wiangwiset a junior web developer
+                        based in Bangkok,Thailand  
+                    </Typography>
+                    <Typography variant="subheading" gutterBottom >
+                        I enjoy coding and bulding web application. I have
+                        quite a serious passion for UX and UI design, trying to
+                        build the best for users. Learning is what i never give up. I am always keeping myself up to date.
                     </Typography>
                 </Grid>
-            </Grid>
-            <Divider variant="middle"/>
-            <Grid container align="center" spaceing={24}>
                 <Grid item xs={12} sm={6}>
-                    <Typography variant="h4" gutterBottom >
-                        Ben
-                    </Typography>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                    <Typography variant="h4" gutterBottom >
-                        Robert
-                    </Typography>
+                    Image
                 </Grid>
             </Grid>
         </div>

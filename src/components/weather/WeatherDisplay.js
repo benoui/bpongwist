@@ -10,7 +10,7 @@ import Greeting from '../contents/Greeting';
 class WeatherDisplay extends React.Component {
     componentDidMount(){
         if(this.props.weather.length === 0){
-            return this.props.fetchWeather('bangkok');
+            return this.props.fetchWeather('london');
         }
         return
     }
