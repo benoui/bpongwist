@@ -3,9 +3,9 @@ import { Typography, Button } from '@material-ui/core';
 import { KeyboardArrowRight } from '@material-ui/icons';
 import { Link as RouterLink} from 'react-router-dom';
 
-const IntroPhrase = () => {
+const Greeting = () => {
     return(
-        <div>
+        <div >
             <div>
                 <Typography variant="h5" align="center">
                     Hi,
@@ -29,4 +29,4 @@ const IntroPhrase = () => {
     );
 };
 
-export default IntroPhrase;
+export default Greeting;

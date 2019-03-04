@@ -1,14 +1,14 @@
 import React from 'react';
 
-import IntroPhrase from './contents/IntroPhrase';
-import WeatherDisplay from './weather/WeatherDisplay';
+import Greeting from './Greeting';
+import WeatherDisplay from '../weather/WeatherDisplay';
 
 class Home extends React.Component {
     render(){
         return(
-            <div>
+            <div style={{backgroundColor: '#233C47'}}>
                 <WeatherDisplay />
-                <IntroPhrase />
+                <Greeting />
             </div>
         );
     }

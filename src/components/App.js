@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import Header from './Header';
-import Home from './Home';
-import About from './contents/About';
-import Work from './contents/Work';
-import Contact from './contents/Contact';
+import Home from './tabs/Home';
+import About from './tabs/About';
+import Work from './tabs/Work';
+import Contact from './tabs/Contact';
 
 const App = () => {
     return(

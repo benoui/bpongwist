@@ -11,7 +11,7 @@ class Header extends React.Component {
 
     render(){
         return(
-            <AppBar position="static" color="inherit">
+            <AppBar position="static" style={{backgroundColor: '#373748'}}>
                 <Tabs 
                     variant="fullWidth" 
                     value={this.state.value} 
