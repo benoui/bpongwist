@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Typography } from '@material-ui/core';
 
 import { fetchWeather } from '../../actions';
+import Spinner from '../Spinner';
+import Greeting from '../contents/Greeting';
 
 
 class WeatherDisplay extends React.Component {
@@ -32,12 +34,13 @@ class WeatherDisplay extends React.Component {
     }
 
     render(){
-        if (!this.props.weather) {
-            return <div>Loading...</div>;
+        if (this.props.weather.length === 0) {
+            return <Spinner />
         }
         return(
             <div>
                 {this.props.weather.map(this.renderWeather)}
+                <Greeting/>
             </div>
         );
     }

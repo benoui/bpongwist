@@ -1,6 +1,8 @@
 import React from 'react';
 import { Typography, Grid, Divider} from '@material-ui/core';
 
+import Spinner from '../Spinner';
+
 const About = () => {
     return(
         <div>
