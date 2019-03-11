@@ -17,7 +17,7 @@ const App = () => {
                         <Route path="/" exact component={Home}/>
                         <Route path="/about" exact component={About}/>
                         <Route path="/work" exact component={Work}/>
-                        <Route path="/contact" exact component={Contact}/>
+                        <Route path="/contact" exact render={()=><Contact/>}/>
                     </div>
                 </div>
             </BrowserRouter>
